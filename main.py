@@ -119,7 +119,7 @@ class TikTokBooster:
                 ProgramUsage.change_video_url(VIDEO)
                 break
             except ValueError:
-                os.system("cls") if os.name == 'nt' else os.system("clear")
+                os.system("clear") if os.name == 'nt' else os.system("clear")
                 print(f"{WARNING}Invalid Video URL. Please Change It{Fore.BLUE}\nOLD URL : {Fore.WHITE}{VIDEO}")
                 VIDEO = input(f"{Fore.BLUE}Insert New -> {Fore.WHITE}")
         self.counter = 0
@@ -158,7 +158,7 @@ class TikTokBooster:
         #     ec.presence_of_element_located((By.XPATH, '//*[@id="rXOa8"]/div/label/input'))).click() #cloudflare
         # except:
         #     pass
-        pytesseract.pytesseract.tesseract_cmd = r'Tesseract/tesseract.exe'
+        pytesseract.pytesseract.tesseract_cmd = '/data/data/com.termux/files/usr/bin/tesseract'
         try:
             WebDriverWait(self.driver, SLEEP).until(ec.presence_of_element_located(
                 (By.XPATH, '/html/body/div[8]/div[2]/div[1]/div[3]/div[2]/button[1]'))).click()
@@ -240,7 +240,7 @@ class TikTokBooster:
 
         # Log back in to the site
         self.driver.get('https://zefoy.com/')
-        pytesseract.pytesseract.tesseract_cmd = r'Tesseract/tesseract.exe'
+        pytesseract.pytesseract.tesseract_cmd = '/data/data/com.termux/files/usr/bin/tesseract'
         try:
             WebDriverWait(self.driver, SLEEP).until(ec.presence_of_element_located(
                 (By.XPATH, '/html/body/div[8]/div[2]/div[1]/div[3]/div[2]/button[1]'))).click()
@@ -287,7 +287,7 @@ class TikTokBooster:
                     ec.presence_of_element_located((By.XPATH, Static.firstStep[TYPE]))).send_keys(VIDEO)
 
                 for _ in range(AMOUNT):
-                    os.system("cls") if os.name == 'nt' else os.system("clear")
+                    os.system("clear") if os.name == 'nt' else os.system("clear")
                     self._show_banner(self.index)
                     time.sleep(0.5)
                     WebDriverWait(self.driver, SLEEP).until(
@@ -388,7 +388,7 @@ class TikTokBooster:
                 return Fore.GREEN
             return Fore.RED
         """Show the program configuration menu"""
-        os.system("cls") if os.name == 'nt' else os.system("clear")
+        os.system("clear") if os.name == 'nt' else os.system("clear")
         print("Type Configuration : \n")
         print(f"{available_color('views')}[{'1' if available_color('views') == Fore.GREEN else '-'}] {'Views'} {'[SELECTED]' if TYPE.lower() == 'views' else ''}")
         print(f"{available_color('followers')}[{'2' if available_color('followers') == Fore.GREEN else '-'}] {'Followers'} {'[SELECTED]' if TYPE.lower() == 'followers' else ''}")
@@ -430,7 +430,7 @@ class TikTokBooster:
         if ProgramUsage.vk():
             pass
         """Show the program configuration menu"""
-        os.system("cls") if os.name == 'nt' else os.system("clear")
+        os.system("clear") if os.name == 'nt' else os.system("clear")
         print(f"{datetime.now().strftime('%H:%M:%S')} {WAITING}{Fore.WHITE}Gathering Video Info...", end="\r")
 
         def _gather_info(info_type):
@@ -481,7 +481,7 @@ class TikTokBooster:
                 msg = self.message.format(self.each_views)
             except KeyError:
                 msg = self.message
-            os.system("cls") if os.name == 'nt' else os.system("clear")
+            os.system("clear") if os.name == 'nt' else os.system("clear")
 
             Handler.webhook_banner(self.webhook_text,self.each_views,TYPE,msg)
 
@@ -531,7 +531,7 @@ class TikTokBooster:
 if __name__ == "__main__":
     if ProgramUsage.vk():
         pass
-    os.system("cls") if os.name == 'nt' else os.system("clear")
+    os.system("clear") if os.name == 'nt' else os.system("clear")
     check_version("2.7.3.3")
     show_credits()
     is_first_run()
