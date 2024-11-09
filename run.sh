@@ -1,2 +1,2 @@
 python3 main.py
-pause
+read -p "Press any key to continue..."
